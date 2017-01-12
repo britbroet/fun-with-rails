@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'dotenv-rails', :require => 'dotenv/rails-now'
 gem 'stormpath-rails', '~> 2.5.0'
 
 group :development, :test do

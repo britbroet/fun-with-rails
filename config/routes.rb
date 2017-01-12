@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+	stormpath_rails_routes
   # get 'main/index'
 
   root 'main#index'

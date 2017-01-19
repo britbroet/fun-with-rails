@@ -1,8 +1,13 @@
 
-<h1>main > index.html.erb</h1>
+<h1>Homepage</h1>
+
+<a href="/home"><button class="btn navbar-btn btn-toolbar">Home</button></a>
+
 
 <% if signed_in? %>
-  <h3> Homepage for <%= current_account.full_name %> </h3>
+  <h3> Hello, <%= current_account.full_name %> </h3>
+  <%= link_to "Logout", logout_path, method: :post %>
+
 <% else %>
   <%= link_to "Login", new_login_path %>
 <% end %>

@@ -4,11 +4,14 @@
 <%= link_to "Add Guest", new_guest_path, class: 'btn-sm btn-info' %>
 
 <div class="container">
-<h2>Attendance</h2>
-Attending: <%= @attending.count %><br>
-Not Attending: <%= @not_attending.count %><br>
-Unconfirmed: <%= @unconfirmed.count %><br>
+	<h2>Attendance</h2>
+	Attending: <%= @attending.count %><br>
+	Not Attending: <%= @not_attending.count %><br>
+	Unconfirmed: <%= @unconfirmed.count %><br>
 </div>
+
+<hr>
+
 
 <div class="container">
 	<% if @guests %>
@@ -16,11 +19,8 @@ Unconfirmed: <%= @unconfirmed.count %><br>
 			<% (0...@guests.length).each do |i| %>
 				<div>
 					<div><strong><%=@guests[i].last %>, <%= @guests[i].first %></strong></div>
-				
-					<div><%= @guests[i].address %></div>
-					<div><%= @guests[i].rsvp %></div>
 
-					<%= bootstrap_form_for @guests[i] do |g| %>
+					<%= form_for @guests[i] do |g| %>
 					  <%= g.select :rsvp, ['Unconfirmed', 'Attending', 'Not Attending'] %>
 					  <%= g.submit "Update" %>
 					<% end %>
@@ -30,6 +30,19 @@ Unconfirmed: <%= @unconfirmed.count %><br>
 					<%= link_to "Edit", edit_guest_path(@guests[i]), class: 'btn-sm btn-primary' %>
 					<%= link_to "Delete", guest_path(@guests[i]), method: :delete, class: 'btn-sm btn-danger' %>
 				</div>
+
+				<div class="container">
+					<a class="btn btn-primary" role="button" data-toggle="collapse" href="#<%= @guests[i].id %>" aria-expanded="false" aria-controls="collapseExample">
+					  <span class="glyphicon glyphicon-plus"></span>
+					</a>
+					<div class="collapse" id=<%= @guests[i].id %>>
+						<div>
+							<%= @guests[i].address %><br>
+							<%= @guests[i].city %>, <%= @guests[i].state %> <%= @guests[i].zip %>
+						</div>
+						<div><%= @guests[i].phone %></div>
+					</div>
+				</div>
 			<hr>		
 			<% end %>
 
@@ -37,3 +50,5 @@ Unconfirmed: <%= @unconfirmed.count %><br>
 		No guests listed.
 	<% end %>
 </div>
+
+

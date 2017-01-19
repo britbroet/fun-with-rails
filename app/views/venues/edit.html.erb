@@ -14,6 +14,6 @@
 		<%= v.text_field :contact_name %>
 		<%= v.text_field :contact_email %>
 		<%= v.text_field :contact_phone %>
-	  <%= v.submit "Update Venue" %>
+	  <%= v.submit "Update Venue" %> <%= link_to "Cancel", venues_path, class: 'btn btn-warning' %>
 	<% end %>
 </div>

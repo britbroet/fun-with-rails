@@ -12,7 +12,6 @@
 	  <%= g.text_field :state %>
 	  <%= g.text_field :zip %>
 	  <%= g.select :rsvp, ['Unconfirmed', 'Attending', 'Not Attending'] %>
-	  <%= g.submit "Update" %>
+	  <%= g.submit "Update" %> <%= link_to "Cancel", guests_path, class: 'btn btn-warning' %>
 	<% end %>
 
-<%= link_to "Back to all", "/guests" %>

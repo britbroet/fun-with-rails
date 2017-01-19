@@ -19,6 +19,12 @@ Unconfirmed: <%= @unconfirmed.count %><br>
 				
 					<div><%= @guests[i].address %></div>
 					<div><%= @guests[i].rsvp %></div>
+
+					<%= bootstrap_form_for @guests[i] do |g| %>
+					  <%= g.select :rsvp, ['Unconfirmed', 'Attending', 'Not Attending'] %>
+					  <%= g.submit "Update" %>
+					<% end %>
+
 				</div>
 				<div class="container">
 					<%= link_to "Edit", edit_guest_path(@guests[i]), class: 'btn-sm btn-primary' %>

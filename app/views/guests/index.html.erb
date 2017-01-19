@@ -1,7 +1,7 @@
 <h1>Guests</h1>
 <p>Find me in app/views/guests/index.html.erb</p>
 
-<%= link_to "Add Guest", new_guest_path, class: 'btn-sm btn-info' %>
+<%= link_to "Add Guest", new_guest_path, class: 'btn btn-info' %>
 
 <div class="container">
 	<h2>Attendance</h2>
@@ -19,10 +19,12 @@
 		
 			<% (0...@guests.length).each do |i| %>
 				<div class="row">
-					<div class="col-xs-12 col-sm-6">
+					<div class="col-xs-1">
 						<a class="btn btn-primary" role="button" data-toggle="collapse" href="#<%= @guests[i].id %>" aria-expanded="false" aria-controls="collapseExample">
-						  <span class="glyphicon glyphicon-plus"></span>
+							<span class="glyphicon glyphicon-plus"></span>
 						</a>
+					</div>
+					<div class="col-xs-11 col-sm-5">
 
 						<strong><%=@guests[i].last %>, <%= @guests[i].first %></strong>
 					</div>
@@ -35,13 +37,15 @@
 					</div>
 
 					<div class="col-xs-12 col-sm-3">
-						<%= link_to "Edit", edit_guest_path(@guests[i]), class: 'btn-sm btn-primary' %>
-						<%= link_to "Delete", guest_path(@guests[i]), method: :delete, class: 'btn-sm btn-danger' %>
+						<%= link_to "Edit", edit_guest_path(@guests[i]), class: 'btn btn-primary' %>
+						<%= link_to "Delete", guest_path(@guests[i]), method: :delete, class: 'btn btn-danger' %>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-xs-12">
-						<div class="collapse container" id=<%= @guests[i].id %>>
+					<div class="col-xs-1">
+					</div>
+					<div class="col-xs-11">
+						<div class="collapse" id=<%= @guests[i].id %>>
 							<div>
 								<%= @guests[i].address %><br>
 								<%= @guests[i].city %>, <%= @guests[i].state %> <%= @guests[i].zip %>

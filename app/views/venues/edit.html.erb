@@ -1,0 +1,19 @@
+<h1>Venues#edit</h1>
+<p>Find me in app/views/venues/edit.html.erb</p>
+
+<div class="container">
+	<%= bootstrap_form_for @venue do |v| %>
+	  <%= v.text_field :name, :required => true %>
+	  <%= v.text_field :address %>
+	  <%= v.text_field :city %>
+	  <%= v.text_field :state %>
+	  <%= v.text_field :zip %>
+		<%= v.text_field :phone %>
+		<%= v.text_field :link %>
+		<%= v.text_field :img %>
+		<%= v.text_field :contact_name %>
+		<%= v.text_field :contact_email %>
+		<%= v.text_field :contact_phone %>
+	  <%= v.submit "Update Venue" %>
+	<% end %>
+</div>

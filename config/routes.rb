@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'venues/index' => 'venues#index'
+
+  get 'venues/new' => 'venues#new'
+
+  get 'venues/edit' => 'venues#edit'
+
+  get 'venues/show' => 'venues#show'
+
   get 'guests' => 'guests#index'
 
   get 'guests/new' => 'guests#new'
@@ -18,4 +26,5 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :guests
+  resources :venues
 end

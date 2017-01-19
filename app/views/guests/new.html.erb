@@ -2,8 +2,6 @@
 <p>Find me in app/views/guests/new.html.erb</p>
 
 <div class="container">
-
-
 	<%= bootstrap_form_for @guest do |g| %>
 	  <%= g.text_field :first, :required => true %>
 	  <%= g.text_field :last %>
@@ -15,7 +13,4 @@
 	  <%= g.select :rsvp, ['Unconfirmed', 'Attending', 'Not Attending'] %>
 	  <%= g.submit "Add" %>
 	<% end %>
-
-
- 
 </div>

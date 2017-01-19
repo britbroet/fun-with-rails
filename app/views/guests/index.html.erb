@@ -1,2 +1,17 @@
 <h1>Guests#index</h1>
 <p>Find me in app/views/guests/index.html.erb</p>
+
+<% if @guests %>
+	
+		<% (0...@guests.length).each do |i| %>
+			<div>
+				<h3><%= @guests[i].first %> <%=@guests[i].last %></h3>
+			
+				<div><%= @guests[i].address %></div>
+			</div>
+		<hr>		
+		<% end %>
+
+<% else %>
+	Parks not found.
+<% end %>

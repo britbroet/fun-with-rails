@@ -30,6 +30,11 @@ class GuestsController < ApplicationController
     @guest = Guest.find(params[:id])
   end
 
+  def destroy
+    Guest.find(params[:id]).delete
+    redirect_to guests_path
+  end
+
 
   private
 

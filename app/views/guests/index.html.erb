@@ -3,25 +3,31 @@
 
 <%= link_to "Add Guest", new_guest_path, class: 'btn-sm btn-info' %>
 
-<% if @guests %>
-	
-		<% (0...@guests.length).each do |i| %>
-			<div>
-				<div><strong><%=@guests[i].last %>, <%= @guests[i].first %></strong></div>
-			
-				<div><%= @guests[i].address %></div>
-				<div><%= @guests[i].rsvp %></div>
-			</div>
-			<div class="container">
-				<%= link_to "Edit", edit_guest_path(@guests[i]), class: 'btn-sm btn-primary' %>
-			</div>
-		<hr>		
-		<% end %>
+<div class="container">
+<h2>Attendance</h2>
+Attending: <%= @attending.count %><br>
+Not Attending: <%= @not_attending.count %><br>
+Unconfirmed: <%= @unconfirmed.count %><br>
+</div>
 
-<% else %>
-	No guests listed.
-<% end %>
+<div class="container">
+	<% if @guests %>
+		
+			<% (0...@guests.length).each do |i| %>
+				<div>
+					<div><strong><%=@guests[i].last %>, <%= @guests[i].first %></strong></div>
+				
+					<div><%= @guests[i].address %></div>
+					<div><%= @guests[i].rsvp %></div>
+				</div>
+				<div class="container">
+					<%= link_to "Edit", edit_guest_path(@guests[i]), class: 'btn-sm btn-primary' %>
+					<%= link_to "Delete", guest_path(@guests[i]), method: :delete, class: 'btn-sm btn-danger' %>
+				</div>
+			<hr>		
+			<% end %>
 
-Attending: <%= @attending.count %>
-Not Attending: <%= @not_attending.count %>
-Unconfirmed: <%= @unconfirmed.count %>
+	<% else %>
+		No guests listed.
+	<% end %>
+</div>

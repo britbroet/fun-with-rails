@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get 'home' => 'home#index'
+
 	stormpath_rails_routes
   # get 'main/index'
 

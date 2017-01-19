@@ -1,13 +1,14 @@
-<h1>Guests#index</h1>
+<h1>Guests</h1>
 <p>Find me in app/views/guests/index.html.erb</p>
 
 <% if @guests %>
 	
 		<% (0...@guests.length).each do |i| %>
 			<div>
-				<h3><%= @guests[i].first %> <%=@guests[i].last %></h3>
+				<h3><%=@guests[i].last %>, <%= @guests[i].first %></h3>
 			
 				<div><%= @guests[i].address %></div>
+				<div><%= @guests[i].rsvp %></div>
 			</div>
 		<hr>		
 		<% end %>

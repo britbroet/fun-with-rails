@@ -20,11 +20,12 @@ ActiveRecord::Schema.define(version: 20170119192732) do
     t.string   "last"
     t.string   "address"
     t.string   "phone"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.string   "city"
     t.string   "state"
     t.string   "zip"
+    t.string   "rsvp",       default: "'Unconfirmed'"
   end
 
   create_table "users", force: :cascade do |t|

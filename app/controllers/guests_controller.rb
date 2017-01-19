@@ -1,7 +1,7 @@
 class GuestsController < ApplicationController
   
   def index
-  	@guests = Guest.all
+  	@guests = Guest.all.order(:last, :first)
   end
 
   def new
@@ -23,7 +23,7 @@ class GuestsController < ApplicationController
   private
 
   def guest_params 
-    params.require(:guest).permit(:first, :last, :address, :city, :state, :zip, :phone)  
+    params.require(:guest).permit(:first, :last, :address, :city, :state, :zip, :phone, :rsvp)  
   end
 end
 

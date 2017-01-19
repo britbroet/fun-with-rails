@@ -12,6 +12,7 @@
 	  <%= g.text_field :city %>
 	  <%= g.text_field :state %>
 	  <%= g.text_field :zip %>
+	  <%= g.select :rsvp, ['Unconfirmed', 'Attending', 'Not Attending'] %>
 	  <%= g.submit "Add" %>
 	<% end %>
 

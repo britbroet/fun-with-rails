@@ -2,6 +2,9 @@ class GuestsController < ApplicationController
   
   def index
   	@guests = Guest.all.order(:last, :first)
+    @attending = Guest.where(:rsvp => :'Attending')
+    @not_attending = Guest.where(:rsvp => :'Not Attending')
+    @unconfirmed = Guest.where(:rsvp => :'Unconfirmed')
   end
 
   def new

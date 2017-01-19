@@ -1,2 +1,18 @@
 <h1>Guests#edit</h1>
 <p>Find me in app/views/guests/edit.html.erb</p>
+
+<h2>Edit <%= @guest.first %> <%= @guest.last %> </h2>
+
+	<%= bootstrap_form_for @guest do |g| %>
+	  <%= g.text_field :first, :required => true %>
+	  <%= g.text_field :last %>
+	  <%= g.text_field :phone %>
+	  <%= g.text_field :address %>
+	  <%= g.text_field :city %>
+	  <%= g.text_field :state %>
+	  <%= g.text_field :zip %>
+	  <%= g.select :rsvp, ['Unconfirmed', 'Attending', 'Not Attending'] %>
+	  <%= g.submit "Update" %>
+	<% end %>
+
+<%= link_to "Back to all", "/guests" %>

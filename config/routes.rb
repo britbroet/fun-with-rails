@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'guests/new' => 'guests#new'
 
-  get 'guests/edit'
+  get 'guests/:id/edit' => "guests#edit"
 
   get 'guests/show'
 

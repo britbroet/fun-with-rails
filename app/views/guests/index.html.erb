@@ -1,18 +1,23 @@
 <h1>Guests</h1>
 <p>Find me in app/views/guests/index.html.erb</p>
 
+<%= link_to "Add Guest", new_guest_path, class: 'btn-sm btn-info' %>
+
 <% if @guests %>
 	
 		<% (0...@guests.length).each do |i| %>
 			<div>
-				<h3><%=@guests[i].last %>, <%= @guests[i].first %></h3>
+				<div><strong><%=@guests[i].last %>, <%= @guests[i].first %></strong></div>
 			
 				<div><%= @guests[i].address %></div>
 				<div><%= @guests[i].rsvp %></div>
+			</div>
+			<div class="container">
+				<%= link_to "Edit", edit_guest_path(@guests[i]), class: 'btn-sm btn-primary' %>
 			</div>
 		<hr>		
 		<% end %>
 
 <% else %>
-	Parks not found.
+	No guests listed.
 <% end %>

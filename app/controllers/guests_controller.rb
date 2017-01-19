@@ -14,9 +14,17 @@ class GuestsController < ApplicationController
   end
 
   def edit
+    @guest = Guest.find(params[:id])
+  end
+
+  def update
+    g = Guest.find(params[:id])
+    g.update(guest_params)
+    redirect_to guests_path
   end
 
   def show
+    @guest = Guest.find(params[:id])
   end
 
 

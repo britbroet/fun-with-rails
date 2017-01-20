@@ -18,7 +18,9 @@
 	<% if @guests %>
 		
 			<% (0...@guests.length).each do |i| %>
-				<div class="row">
+				<div class="row 
+					<% if @guests[i].rsvp == 'Attending' %> attending 
+					<% elsif @guests[i].rsvp == 'Not Attending' %> not_attending <% end %> ">
 					<div class="col-xs-1">
 						<a class="btn btn-primary" role="button" data-toggle="collapse" href="#<%= @guests[i].id %>" aria-expanded="false" aria-controls="collapseExample">
 							<span class="glyphicon glyphicon-plus"></span>

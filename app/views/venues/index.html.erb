@@ -1,7 +1,8 @@
 <h1>Venues</h1>
 
-
-<%= link_to "Add Venue", new_venue_path, class: 'btn btn-info' %>
+<div class="container">
+	<%= link_to "Add Venue", new_venue_path, class: 'btn btn-info' %>
+</div>
 
 <div class="container">
 	<% if @venues.count > 0 %>

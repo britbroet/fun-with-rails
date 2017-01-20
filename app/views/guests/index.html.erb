@@ -1,15 +1,17 @@
 <h1>Guests</h1>
-<p>Find me in app/views/guests/index.html.erb</p>
 
-<%= link_to "Add Guest", new_guest_path, class: 'btn btn-info' %>
-
-<div class="container">
-	<h2>Attendance</h2>
-	Invited: <%= @guests.count %><br>
-	Attending: <%= @attending.count %><br>
-	Not Attending: <%= @not_attending.count %><br>
-	Unconfirmed: <%= @unconfirmed.count %><br>
+<div class="row">
+	<div class="col-xs-12 col-sm-6">
+		Invited: <%= @guests.count %><br>
+		Attending: <%= @attending.count %><br>
+		Not Attending: <%= @not_attending.count %><br>
+		Unconfirmed: <%= @unconfirmed.count %>
+	</div>
+	<div class="col-xs-12 col-sm-6 text-right">
+		<%= link_to "Add Guest", new_guest_path, class: 'btn btn-info' %>
+	</div>
 </div>
+
 
 <hr>
 

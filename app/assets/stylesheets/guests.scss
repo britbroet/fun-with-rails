@@ -2,12 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.attending, .not_attending, .unconfirmed {
+	padding: 5px;
+}
+
 .attending {
  	background-color: lightskyblue;
-  padding: 4px;
 }
 
 .not_attending {
  	background-color: lightcoral;
-  padding: 4px;
 }
